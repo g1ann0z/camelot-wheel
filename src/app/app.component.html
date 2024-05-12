@@ -1,37 +1,43 @@
 <div class="container">
   <div class="columns is-centered">
-    <div class="box column is-one-third">
-      <h1 class="title has-text-centered">Camelot Wheel</h1>
+    
+      <div class="box column is-one-third">
+        <h1 class="title has-text-centered">Camelot Wheel</h1>
 
-      <div>
-        <label for="input">Chiave armonica in stile anglosassone</label><br>
-        <input type="text" (input)="inputKey($event)">
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <label for="input">Scala</label><br>
-          <input type="radio" name="scale" value="maior" (change)="scale($any($event.target).value)"/> Maggiore<br>
-          <input type="radio" name="scale" value="minor" (change)="scale($any($event.target).value)"/> Minore
+        <div>
+          <label for="input">Chiave armonica in stile anglosassone</label><br>
+          <input type="text" (input)="inputKey($event)">
         </div>
-        <div class="control">
-          <label for="input">Semitono</label><br>
-          <input type="radio" name="tone" value="sharp" (change)="tone($any($event.target).value)"/> #<br>
-          <input type="radio" name="tone" value="flat" (change)="tone($any($event.target).value)"/> ♭<br>
-          <input type="radio" name="tone" value="none" (change)="tone('none')" [checked]="userTone === 'none'"> no
+
+        <div class="field">
+          <div class="control">
+            <label for="input">Scala</label><br>
+            <input type="radio" name="scale" value="maior" (change)="scale($any($event.target).value)" /> Maggiore<br>
+            <input type="radio" name="scale" value="minor" (change)="scale($any($event.target).value)" /> Minore
+          </div>
+          <div class="control">
+            <label for="input">Semitono</label><br>
+            <input type="radio" name="tone" value="sharp" (change)="tone($any($event.target).value)" /> #<br>
+            <input type="radio" name="tone" value="flat" (change)="tone($any($event.target).value)" /> ♭<br>
+            <input type="radio" name="tone" value="none" (change)="tone('none')" [checked]="userTone === 'none'"> no
+          </div>
+        </div>
+        <div class="field">
+          <button [disabled]="!(userKey)"
+          class="button is-link is-fullwidth" (click)="search()">Cerca</button>
         </div>
       </div>
-      <div class="button">
-        <button (click)="search()">Cerca</button>
-      </div>
+    
+  </div>
+  
+  <div class="columns is-centered">
+    <div class="box column is-one-third" *ngIf="currentSelections">
 
-      <div class="box" *ngIf="currentSelections">
-        <label>Chiavi armoniche compatibili</label>
-        <input class="input" [value]="resultA" />
-        <input class="input" [value]="resultB" />
-        <input class="input" [value]="resultC" />
-      </div>
-
+      <label>Chiavi armoniche compatibili</label>
+      <input class="input" [value]="resultA" />
+      <input class="input" [value]="resultB" />
+      <input class="input" [value]="resultC" />
     </div>
   </div>
+
 </div>

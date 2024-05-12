@@ -1,0 +1,18 @@
+.container{
+    margin-top: 20px;
+    padding: 20px;
+}
+
+h1{
+    color: red;
+}
+
+label{
+    color: blue;
+}
+
+ .input{
+    color: red;
+    font-weight: bold;
+ }
+
