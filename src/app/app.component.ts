@@ -24,6 +24,10 @@ export class AppComponent {
   noteMaior: any ='';
   noteMinor: any ='';
 
+  resultA: string ='';
+  resultB: string ='';
+  resultC: string ='';
+
   constructor() {
     this.initializeArrays();
   }
@@ -107,7 +111,11 @@ export class AppComponent {
             this.noteMaior = this.tunrArray.shift();
             this.tunrArray.push(this.noteMaior);
         }
-        console.log(this.tunrArray[5], "<=" + this.tunrArray[0] + "=>", this.tunrArray[7], this.tunrArray[9] + "m");
+        this.resultA = this.tunrArray[5];
+        this.resultB = this.tunrArray[7];
+        this.resultC = this.tunrArray[9] + "m";
+
+        /* console.log(this.tunrArray[5], "<=" + this.tunrArray[0] + "=>", this.tunrArray[7], this.tunrArray[9] + "m"); */
     } else if (this.camelotWheelMinor.includes(data)) {
         while (this.tunrArrayMinor[0] !== data) {
             this.noteMinor = this.tunrArrayMinor.shift();
@@ -115,6 +123,10 @@ export class AppComponent {
             this.noteMaior = this.tunrArray.shift();
             this.tunrArray.push(this.noteMaior);
         }
+        this.resultA = this.tunrArray[5] + "m";
+        this.resultB = this.tunrArray[7] + "m";
+        this.resultC = this.tunrArray[3];
+
         console.log(this.tunrArray[5] + "m", "<=" + this.tunrArray[0]+ "m" + "=>", this.tunrArray[7] + "m", this.tunrArray[3]);
     }
 
