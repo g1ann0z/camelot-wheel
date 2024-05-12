@@ -15,10 +15,21 @@
           <input type="radio" name="scale" value="minor" (change)="scale($any($event.target).value)"/> Minore
         </div>
         <div class="control">
-          <label for="input">Tono</label><br>
-          <input type="radio" name="tone" value="sharp" /> #<br>
-          <input type="radio" name="tone" value="flat" /> ♭
+          <label for="input">Semitono</label><br>
+          <input type="radio" name="tone" value="sharp" (change)="tone($any($event.target).value)"/> #<br>
+          <input type="radio" name="tone" value="flat" (change)="tone($any($event.target).value)"/> ♭<br>
+          <input type="radio" name="tone" value="none" (change)="tone('none')" [checked]="userTone === 'none'"> no
         </div>
+      </div>
+      <div class="button">
+        <button (click)="search()">Cerca</button>
+      </div>
+
+      <div class="box" *ngIf="currentSelections">
+        <label>Chiavi armoniche compatibili</label>
+        <input class="input" [value]="currentSelections" />
+        <input class="input" [value]="currentSelections" />
+        <input class="input" [value]="currentSelections" />
       </div>
 
     </div>
