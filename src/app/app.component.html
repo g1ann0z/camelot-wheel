@@ -17,8 +17,8 @@
           </div>
           <div class="control">
             <label for="input">Semitono</label><br>
-            <input type="radio" name="tone" value="sharp" (change)="tone($any($event.target).value)" /> #<br>
-            <input type="radio" name="tone" value="flat" (change)="tone($any($event.target).value)" /> ♭<br>
+            <input type="radio" [disabled]="(userKey === 'M' || userKey === 'B')"name="tone" value="sharp" (change)="tone($any($event.target).value)" /> #<br>
+            <input type="radio" [disabled]="(userKey === 'C' || userKey === 'F')" name="tone" value="flat" (change)="tone($any($event.target).value)" /> ♭<br>
             <input type="radio" name="tone" value="none" (change)="tone('none')" [checked]="userTone === 'none'"> no
           </div>
         </div>
