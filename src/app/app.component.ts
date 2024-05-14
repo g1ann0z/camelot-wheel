@@ -106,7 +106,8 @@ export class AppComponent {
         data = "Am#";
     }
 
-    if(this.camelotWheel.includes(data)){   
+    if(this.camelotWheel.includes(data)){  
+        this.initializeArrays(); /* inizializza array */
         while (this.tunrArray[0] !== data) {
             this.noteMaior = this.tunrArray.shift();
             this.tunrArray.push(this.noteMaior);
@@ -117,6 +118,7 @@ export class AppComponent {
 
         /* console.log(this.tunrArray[5], "<=" + this.tunrArray[0] + "=>", this.tunrArray[7], this.tunrArray[9] + "m"); */
     } else if (this.camelotWheelMinor.includes(data)) {
+        this.initializeArrays(); /* inizializza array */
         while (this.tunrArrayMinor[0] !== data) {
             this.noteMinor = this.tunrArrayMinor.shift();
             this.tunrArrayMinor.push(this.noteMinor);
