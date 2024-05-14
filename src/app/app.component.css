@@ -4,15 +4,21 @@
 }
 
 h1{
-    color: red;
+    color: rgb(45, 170, 20);
+    
 }
 
 label{
-    color: blue;
+    color: rgb(220, 81, 116);
+    
+    
 }
 
  .input{
-    color: red;
+    color: rgb(45, 170, 20);
     font-weight: bold;
  }
 
+ .button{
+    color: white;
+ }
